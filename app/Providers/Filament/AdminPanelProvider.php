@@ -41,6 +41,8 @@ class AdminPanelProvider extends PanelProvider
                 //Widgets\FilamentInfoWidget::class,
                 // aquí puedes introducir los widgets que quieras en tu panel de usuario
             ])
+            ->profile() // esto permite añadir a nuestro nombre de usuario un 
+            // perfil que nos permite cambiar de usuario y de contraseña 
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
