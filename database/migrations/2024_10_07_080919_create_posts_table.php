@@ -19,7 +19,7 @@ return new class extends Migration
             // con la tabla usuarios y a continuación indicamos que dicho campo
             // referencia el id en la tabla users
             $table->unsignedBigInteger('category_id'); //usuario crea post
-            $table->foreign('category_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('category');
 
 
             $table->string('title');
