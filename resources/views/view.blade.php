@@ -74,7 +74,7 @@
         <!--Cuerpo con los posts-->
 
         <div class="overflow-x-auto">
-            @foreach ($posts as $post)
+          
             <article class="flex flex-col shadow my-4">
                 <div class="bg-white flex flex-col justify-start p-6">
                     <a href="/{{$post->slug}}" class="hover:opacity-75">
@@ -83,12 +83,12 @@
                     <a href="" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$post->category->name}}</a>
                     <a href="/{{$post->slug}}" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$post->title}}</a>
                     <a href="" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$post->user->name}}</a>, Published on {{$post->created_at}}
-                    <a href="" class="text-blue-700 text-sm font-bold uppercase pb-4">{!! \Illuminate\Support\Str::limit($post->body, 10, '...') !!}</a>
+                    <a href="" class="text-blue-700 text-sm font-bold uppercase pb-4">{!! $post->body !!}</a>
                     <!-- con la  linea anterior controlamos la cantidad de texto que quereos mostrar y establecemos el boton que al cliclar señalará el resto -->
                 </div>
             </article>
             
-            @endforeach
+            
         </div>
         </div>
 
