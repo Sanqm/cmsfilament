@@ -17,6 +17,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin; // es importante que importemos esta línea para que pueda funcionar los permisos
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -54,6 +55,7 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            ->plugin(FilamentSpatieRolesPermissionsPlugin::make()) // con esta línea indicamos que se usan los permisos
             ->authMiddleware([
                 Authenticate::class,
             ]);
