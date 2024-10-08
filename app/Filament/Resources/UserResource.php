@@ -23,7 +23,7 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
     // a diferencia de los modelos que se creaban para post y comentarios  los formularios y la tabla se encuentran vacias 
     //por lo  que vamos a ir personalizandolas
