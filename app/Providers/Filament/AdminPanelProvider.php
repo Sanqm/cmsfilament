@@ -18,7 +18,10 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin; // es importante que importemos esta línea para que pueda funcionar los permisos
-
+use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
+use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
+/*importamos lo necesario para el uso de jobs monitor*/
+use \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
@@ -69,6 +72,15 @@ class AdminPanelProvider extends PanelProvider
                     //->registerNavigation(false) esta línea hace que no se te muestre en el aside panel
                     ->defaultListView('grid' || 'list')
                     
+            ])
+
+            ->plugin(FilamentSpatieLaravelBackupPlugin::make()) //para que se puedan usar todas las funcionalidades 
+            //es necesario tener insataldo mysql, este paquete esta muy orientado a controlar la app cuando se encuentra en producccion
+
+            ->plugin(FilamentSpatieLaravelHealthPlugin::make())
+
+            ->plugins([
+                FilamentJobsMonitorPlugin::make()
             ])
             //todo lo que metamos aqui tiene que ser antes del método Middleware
             ->authMiddleware([ 

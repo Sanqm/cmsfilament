@@ -39,7 +39,7 @@ class CommentResource extends Resource
                 Tables\Columns\TextColumn::make('post.title')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('post.body') // por ejemplo aquí añadimos  que se pueda ver el texto también 
+                Tables\Columns\TextColumn::make('body') // por ejemplo aquí añadimos  que se pueda ver el texto también 
                     
                     ->sortable(),
 

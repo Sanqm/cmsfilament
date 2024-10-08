@@ -48,8 +48,8 @@ class PostResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image_url')
                     ->imageEditor() // permite añadir a nuestra imagen un editor de  imagenes
-                    ->image()
-                    ->required(),
+                    ->image(),
+                   // ->required(),
             ]);
     }
 
