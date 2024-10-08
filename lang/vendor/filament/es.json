@@ -4,6 +4,17 @@
         "cancel": "Cancelar",
         "edit": "Editar",
         "delete": "Eliminar",
-        "create": "Crear"
+        "create": "Crear",
+        "user": "usuario"
+    },
+    "actions": {
+        "delete": "Eliminar seleccionado",
+        "edit": "Editar seleccionado"
+    },
+    "labels": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "user": "usuario"
     }
 }

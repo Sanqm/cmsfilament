@@ -55,8 +55,10 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->plugin(FilamentSpatieRolesPermissionsPlugin::make()) // con esta línea indicamos que se usan los permisos
-            ->authMiddleware([
+            //->plugin(FilamentSpatieRolesPermissionsPlugin::make()) // con esta línea indicamos que se usan los permisos a través del pligun spatie 
+            //pero esto tiene un problema y es que no puedes ocultar el panel que se crea de acceso a los mismos según los permisos 
+            /*vamos a ver como se haría de manera tradicional*/
+            ->authMiddleware([ 
                 Authenticate::class,
             ]);
     }
