@@ -58,6 +58,19 @@ class AdminPanelProvider extends PanelProvider
             //->plugin(FilamentSpatieRolesPermissionsPlugin::make()) // con esta línea indicamos que se usan los permisos a través del pligun spatie 
             //pero esto tiene un problema y es que no puedes ocultar el panel que se crea de acceso a los mismos según los permisos 
             /*vamos a ver como se haría de manera tradicional*/
+            ->plugins([
+                \Awcodes\Curator\CuratorPlugin::make()
+                    ->label('Media')
+                    ->pluralLabel('Media')
+                    ->navigationIcon('heroicon-o-photo')
+                    ->navigationGroup('Content')
+                    ->navigationSort(3)
+                    ->navigationCountBadge()
+                    //->registerNavigation(false) esta línea hace que no se te muestre en el aside panel
+                    ->defaultListView('grid' || 'list')
+                    
+            ])
+            //todo lo que metamos aqui tiene que ser antes del método Middleware
             ->authMiddleware([ 
                 Authenticate::class,
             ]);
